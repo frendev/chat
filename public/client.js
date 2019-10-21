@@ -23,6 +23,10 @@ form.addEventListener('submit',(e)=>{
     e.preventDefault()
 })
 
+socket.on('prev_chats',data=>{
+    output.innerHTML+='<span id=timestamp>'+data.timestamp+'</span>'+ '<p><strong>'+data.handle+'</strong>'+':'+'<span>'+data.message+'</span></p>'
+})
+
 socket.on('rec_chat',data=>{
     output.innerHTML+='<span id=timestamp>'+data.chat_timestamp+'</span>'+ '<p><strong>'+data.chat_handle+'</strong>'+':'+'<span>'+data.chat_message+'</span></p>'
 })
